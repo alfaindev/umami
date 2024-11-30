@@ -37,6 +37,9 @@ export default async (
   req: NextApiRequestQueryBody<any, LoginRequestBody>,
   res: NextApiResponse<LoginResponse>,
 ) => {
+  /* eslint-disable no-console */
+  console.log('dbUrl', process.env.DATABASE_URL);
+
   if (process.env.DISABLE_LOGIN) {
     return forbidden(res);
   }
